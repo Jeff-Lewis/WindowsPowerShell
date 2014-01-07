@@ -1,0 +1,2 @@
+#add-pssnapin SqlServerCmdletSnapin100
+#add-pssnapin SqlServerProviderSnapin100

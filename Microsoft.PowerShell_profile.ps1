@@ -1,9 +1,11 @@
 #Add-PSSnapin SqlServerCmdletSnapin100
 #Add-PSSnapin SqlServerProviderSnapin100
 
-Import-Module PowerShellPack # http://archive.msdn.microsoft.com/PowerShellPack
+#Import-Module PowerShellPack # http://archive.msdn.microsoft.com/PowerShellPack
 
 Set-PSDebug -Strict
+
+#Set-Alias Fix command to use QNAP shared drives
 
 Set-Alias rc Edit-PowershellProfile
 

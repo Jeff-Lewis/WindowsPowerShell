@@ -45,8 +45,8 @@ if (!$result -and $numFiles)
 		$second = $date.Substring(17,2)
         # Set default filename
         $id = $file.BaseName.Substring(4,4)
-        #$filename = "{0}-{1}-{2} {3}.{4}.{5}.jpg" -f $year,$month,$day,$hour,$minute,$second
-        $filename = "{0}-{1}-{2}-{3}.jpg" -f $year,$month,$day,$id
+        $filename = "{0}-{1}-{2} {3}.{4}.{5}.jpg" -f $year,$month,$day,$hour,$minute,$second
+        #$filename = "{0}-{1}-{2}-{3}.jpg" -f $year,$month,$day,$id
 		#TODO Need a new pattern to even check if filename is equal to an incremented number and if so to leave the file alone
         #TODO Better is to add current counter from filename and just add the date in front of it
         # If file is named correctly, do not rename
@@ -57,8 +57,8 @@ if (!$result -and $numFiles)
             while (Test-Path $filename)
             {
                 $counter++
-                #$filename = "{0}-{1}-{2} {3}.{4}.{5} copy{6}.jpg" -f $year,$month,$day,$hour,$minute,$second,$counter
-                $filename = "{0}-{1}-{2}-{3}-copy{4}.jpg" -f $year,$month,$day,$id,$counter
+                $filename = "{0}-{1}-{2} {3}.{4}.{5}_{6}.jpg" -f $year,$month,$day,$hour,$minute,$second,$counter
+                #$filename = "{0}-{1}-{2}-{3}-copy{4}.jpg" -f $year,$month,$day,$id,$counter
             }
             # Rename the photo with the known-good filename
             Rename-Item $file.FullName -NewName $filename
